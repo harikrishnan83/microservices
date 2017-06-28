@@ -1,0 +1,7 @@
+---
+applications:
+- name: user-service
+  memory: 256MB
+  random-route: true
+  path: build/libs/user-service-0.0.1-SNAPSHOT.jar
+
