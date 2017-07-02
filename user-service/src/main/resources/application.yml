@@ -4,7 +4,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:https://service-registry.local.pcfdev.io}/eureka/
+      defaultZone: ${DISCOVERY_URL:https://service-registry-plantationlike-glutton.cfapps.io}/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
