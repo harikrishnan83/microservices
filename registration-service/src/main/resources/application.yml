@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: registration-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:https://service-registry.local.pcfdev.io}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2

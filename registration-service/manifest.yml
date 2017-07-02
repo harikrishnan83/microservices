@@ -1,0 +1,4 @@
+applications:
+- name: registration-service
+  memory: 256MB
+  path: build/libs/registration-service-0.0.1-SNAPSHOT.jar
