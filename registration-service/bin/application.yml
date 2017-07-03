@@ -1,6 +1,7 @@
 spring:
   application:
     name: registration-service
+
 eureka:
   client:
     serviceUrl:
@@ -8,3 +9,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
+    
+user-service:
+  ribbon:
+    listOfServers: user-service.local.pcfdev.io
