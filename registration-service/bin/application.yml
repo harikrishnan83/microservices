@@ -12,4 +12,4 @@ eureka:
     
 user-service:
   ribbon:
-    listOfServers: user-service.local.pcfdev.io
+    listOfServers: user-service-subintroductive-quenchableness.cfapps.io
