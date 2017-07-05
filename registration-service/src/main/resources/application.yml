@@ -12,3 +12,20 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
+
+ribbon:
+  ReadTimeout: 1000
+
+feign:
+  hystrix:
+    enabled: true
+  
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
