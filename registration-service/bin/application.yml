@@ -5,7 +5,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry-plantationlike-glutton.cfapps.io}/eureka/
+      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry.cfapps.io/}/eureka/
     registerWithEureka: true
     fetchRegistry: true
     registryFetchIntervalSeconds: 1
