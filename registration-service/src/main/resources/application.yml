@@ -1,15 +1,31 @@
 spring:
   application:
-    name: registration-service
+    name: polarizer-registration-service
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:https://service-registry.local.pcfdev.io}/eureka/
+      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry-plantationlike-glutton.cfapps.io}/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 1
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
-    
-user-service:
-  ribbon:
-    listOfServers: user-service-subintroductive-quenchableness.cfapps.io
+
+ribbon:
+  ReadTimeout: 1000
+
+feign:
+  hystrix:
+    enabled: true
+  
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
