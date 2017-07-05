@@ -18,7 +18,8 @@ public class UserController {
     public List<User> index() {
 		List<User> users = new ArrayList<User>();
 		users.add(new User("hari@polarizer.in", "Hari Krishnan"));
-		users.add(new User("a@polarizer.in", "a"));
+		users.add(new User("nalini@polarizer.in", "Nalini"));
+		System.out.println("place holder app log");
         return users;
     }	
 }
