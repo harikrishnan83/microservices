@@ -1,0 +1,19 @@
+server:
+  host: polarizer-gateway-service.local.pcfdev.io
+spring:
+  application:
+    name: polarizer-gateway-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry.local.pcfdev.io}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+zuul:
+  prefix: /api
+  routes:
+    users:
+      path: /users/**
+      serviceId: polarizer-user-service
