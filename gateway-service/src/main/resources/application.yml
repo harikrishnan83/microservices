@@ -14,6 +14,21 @@ eureka:
 zuul:
   prefix: /api
   routes:
-    users:
-      path: /users/**
+    accounts:
+      path: /accounts/**
       serviceId: polarizer-user-service
+    user:
+      path: /user/**
+      url: https://polarizer-authorization-service.local.pcfdev.io/uaa/user    
+
+security:
+  oauth2:    
+    client:
+      accessTokenUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/oauth/token
+      userAuthorizationUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/oauth/authorize
+      clientId: polarizer
+      clientSecret: polarizersecret
+    resource:
+      userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
+      preferTokenInfo: false  
+  sessions: ALWAYS

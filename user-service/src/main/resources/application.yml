@@ -16,3 +16,8 @@ eureka:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
     preferIpAddress: true
+    
+security:
+    oauth2:
+        resource:
+            userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
