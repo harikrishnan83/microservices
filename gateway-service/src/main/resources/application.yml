@@ -19,7 +19,10 @@ zuul:
       serviceId: polarizer-user-service
     user:
       path: /user/**
-      url: https://polarizer-authorization-service.local.pcfdev.io/uaa/user    
+      url: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
+    registrations:
+      path: /registrations/**
+      serviceId: polarizer-registration-service    
 
 security:
   oauth2:    

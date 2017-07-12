@@ -12,12 +12,15 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
+    preferIpAddress: true
 
 ribbon:
   ReadTimeout: 1000
 
 feign:
   hystrix:
+    enabled: true
+  oauth2:
     enabled: true
   
 hystrix:
@@ -27,5 +30,11 @@ hystrix:
     default:
       execution:
         isolation:
+          strategy: SEMAPHORE
           thread:
             timeoutInMilliseconds: 3000
+
+security:
+    oauth2:
+        resource:
+            userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
