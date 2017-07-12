@@ -8,10 +8,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableEurekaClient
 @EnableResourceServer
 @SpringBootApplication
-public class UserServiceApplication {
+public class ProfileServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+		SpringApplication.run(ProfileServiceApplication.class, args);
 	}
 
 //	@Configuration

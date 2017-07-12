@@ -1,13 +1,13 @@
 package com.polarizer.registrationservice;
 
-public class User {
+public class Profile {
 	private String email;
 	private String name;
 	
-	public User() {
+	public Profile() {
 	}
 	
-	public User(String email, String name) {
+	public Profile(String email, String name) {
 		this.email = email;
 		this.name = name;
 	}

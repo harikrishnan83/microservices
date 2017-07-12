@@ -1,10 +1,10 @@
 package com.polarizer.user;
 
-public class User {
+public class Profile {
 	private final String email;
 	private final String name;
 	
-	public User(String email, String name) {
+	public Profile(String email, String name) {
 		this.email = email;
 		this.name = name;
 	}

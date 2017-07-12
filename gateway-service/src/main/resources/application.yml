@@ -14,9 +14,9 @@ eureka:
 zuul:
   prefix: /api
   routes:
-    accounts:
-      path: /accounts/**
-      serviceId: polarizer-user-service
+    profiles:
+      path: /profiles/**
+      serviceId: polarizer-profile-service
     user:
       path: /user/**
       url: https://polarizer-authorization-service.local.pcfdev.io/uaa/user

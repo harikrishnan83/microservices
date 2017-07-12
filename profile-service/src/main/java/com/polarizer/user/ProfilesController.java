@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class UserController {
+public class ProfilesController {
 	@RequestMapping("/")
 	public String hello(Principal principal) {
 		printRequester(principal);
@@ -17,11 +17,11 @@ public class UserController {
 	}
 	
 	@RequestMapping("/users")
-    public List<User> index(Principal principal) {
+    public List<Profile> index(Principal principal) {
 		printRequester(principal);
-		List<User> users = new ArrayList<User>();
-		users.add(new User("hari@polarizer.in", "Hari Krishnan"));
-		users.add(new User("nalini@polarizer.in", "Nalini"));
+		List<Profile> users = new ArrayList<Profile>();
+		users.add(new Profile("hari@polarizer.in", "Hari Krishnan"));
+		users.add(new Profile("nalini@polarizer.in", "Nalini"));
 		return users;
     }
 

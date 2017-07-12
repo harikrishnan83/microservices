@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserServiceFallback implements UserServiceClient {
+public class ProfileServiceFallback implements ProfileServiceClient {
 
 	@Override
-	public List<User> findAll() {
+	public List<Profile> findAll() {
 		System.out.println("------Fallback");
-		List<User> fallbackUsers = new ArrayList<User>();
+		List<Profile> fallbackUsers = new ArrayList<Profile>();
 		return fallbackUsers;
 	}
 	

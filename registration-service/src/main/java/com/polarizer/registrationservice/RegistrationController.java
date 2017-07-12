@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RegistrationController {
 	
 	@Autowired
-	private UserServiceClient userServiceClient;
+	private ProfileServiceClient userServiceClient;
 	
 	@RequestMapping("/")
 	public String hello() {
@@ -18,7 +18,7 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping("/registrations")
-    public List<User> index() {
+    public List<Profile> index() {
 //		List<ServiceInstance> instances = this.discoveryClient.getInstances("user-service");
 //		UserServiceClient userServiceClient = Feign.builder().target(UserServiceClient.class, "http://user-service");
 		System.out.println("-------" + userServiceClient.toString());
