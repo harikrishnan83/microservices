@@ -15,7 +15,7 @@ eureka:
     preferIpAddress: true
 
 ribbon:
-  ReadTimeout: 1000
+  ReadTimeout: 5000
 
 feign:
   hystrix:
@@ -32,9 +32,10 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 10000
 
 security:
-    oauth2:
-        resource:
-            userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
+  oauth2:
+    resource:
+      userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
+  ignored: /hystrix, /hystrix.stream, /hystrix/**, /webjars/**, /proxy.stream
