@@ -1,0 +1,17 @@
+server:
+  host: polarizer-authorization-service.cfapps.io
+  contextPath: /uaa
+spring:
+  application:
+    name: polarizer-authorization-service
+
+security:
+  oauth2:
+    client:
+      authorized-grant-types: authorization_code,refresh_token,password
+      clientId: polarizer
+      clientSecret: polarizersecret
+      scope: openid
+  user:
+    name: hari
+    password: password

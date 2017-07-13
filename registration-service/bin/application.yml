@@ -5,19 +5,20 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry.cfapps.io/}/eureka/
+      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry.cfapps.io}/eureka/
     registerWithEureka: true
     fetchRegistry: true
     registryFetchIntervalSeconds: 1
   instance:
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
+    preferIpAddress: true
 
 ribbon:
-  ReadTimeout: 1000
+  ReadTimeout: 5000
 
 feign:
   hystrix:
+    enabled: true
+  oauth2:
     enabled: true
   
 hystrix:
@@ -27,5 +28,12 @@ hystrix:
     default:
       execution:
         isolation:
+          strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 10000
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: https://polarizer-authorization-service.local.pcfdev.io/uaa/user
+  ignored: /hystrix, /hystrix.stream, /hystrix/**, /webjars/**, /proxy.stream

@@ -1,0 +1,34 @@
+server:
+  host: polarizer-gateway-service.cfapps.io
+spring:
+  application:
+    name: polarizer-gateway-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:https://polarizer-service-registry.cfapps.io}/eureka/
+
+zuul:
+  prefix: /api
+  routes:
+    profiles:
+      path: /profiles/**
+      serviceId: polarizer-profile-service
+    user:
+      path: /user/**
+      url: https://polarizer-authorization-service.cfapps.io/uaa/user
+    registrations:
+      path: /registrations/**
+      serviceId: polarizer-registration-service    
+
+security:
+  oauth2:    
+    client:
+      accessTokenUri: https://polarizer-authorization-service.cfapps.io/uaa/oauth/token
+      userAuthorizationUri: https://polarizer-authorization-service.cfapps.io/uaa/oauth/authorize
+      clientId: polarizer
+      clientSecret: polarizersecret
+    resource:
+      userInfoUri: https://polarizer-authorization-service.cfapps.io/uaa/user
+      preferTokenInfo: false  
+  sessions: ALWAYS

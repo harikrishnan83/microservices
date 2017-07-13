@@ -1,5 +1,0 @@
-applications:
-- name: polarizer-user-service
-  memory: 256MB
-  path: build/libs/user-service-0.0.1-SNAPSHOT.jar
-  instances: 2

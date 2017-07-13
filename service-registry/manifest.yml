@@ -1,4 +1,4 @@
 applications:
 - name: polarizer-service-registry
-  memory: 512MB
+  memory: 256MB
   path: build/libs/service-registry-0.0.1-SNAPSHOT.jar
